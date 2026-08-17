@@ -42,64 +42,63 @@ git clone [https://github.com/adelekeadeniyan/NSL-Alphanumeric-Android-App.git](
 cd NSL-Alphanumeric-Android-App
 
 
-2. Open in Android Studio
-Launch Android Studio (Hedgehog | 2023.1.1 or newer recommended).
+### 2. Open in Android Studio
+1. Launch **Android Studio** (Hedgehog | 2023.1.1 or newer recommended).
+2. Select **Open** and navigate to the cloned project root.
+3. Allow Gradle to sync and install missing platform tools automatically.
 
-Select Open and navigate to the cloned project root.
+### 3. Verify Model Assets
+Ensure the model files are located inside `app/src/main/assets/`:
+* `best_float32.tflite` — Trained YOLO detection graph.
+* `lables.txt` — Plain-text class index mapping.
 
-Allow Gradle to sync and install missing platform tools automatically.
+### 4. Build & Deploy
+Connect a physical Android device (API 24+) via USB Debugging and press **Run (`Shift + F10`)**. Grant camera permissions when prompted.
 
-3. Verify Model Assets
-Ensure the model files are located inside app/src/main/assets/:
+---
 
-best_float32.tflite — Trained YOLO detection graph.
+## 📂 Project Architecture
 
-lables.txt — Plain-text class index mapping.
-
-4. Build & Deploy
-Connect a physical Android device (API 24+) via USB Debugging and press Run (Shift + F10). Grant camera permissions when prompted.
-
-📂 Project Architecture
-
+```text
 app/src/main/java/com/example/signlanguagedetector/
 ├── YoloDetector.kt    # Loads TFLite model, handles image scaling/normalization, and applies Non-Maximum Suppression (NMS).
 ├── OverlayView.kt     # Custom UI view for rendering bounding boxes and class labels onto the camera canvas.
 └── MainActivity.kt    # Binds CameraX lifecycle, handles surface transforms, and updates the translation view.
 
+## 📝 Supported Alphanumeric Classes
 
-📝 Supported Alphanumeric Classes
-The model is trained on 33 distinct static manual sign classes:
+The model is trained on **33 distinct static manual sign classes**:
 
-Numbers (9): 1, 2, 3, 4, 5, 6, 7, 8, 9
+* **Numbers (9):** `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`
+* **Alphabet Letters (24):** `a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `k`, `l`, `m`, `n`, `o`, `p`, `q`, `r`, `s`, `t`, `u`, `v`, `w`, `y`
 
-Alphabet Letters (24): a, b, c, d, e, f, g, h, i, k, l, m, n, o, p, q, r, s, t, u, v, w, y
+*(Note: Dynamic gestures requiring movement such as `j` and `z` are excluded from static single-frame evaluation).*
 
-(Note: Dynamic gestures requiring movement such as j and z are excluded from static single-frame evaluation).
+---
 
-🤝 Contributing
+## 🤝 Contributing
+
 Contributions, bug fixes, and dataset improvements are welcome!
 
-Fork the repository.
-
-Create your Feature Branch:
-
-Bash
+1. **Fork** the repository.
+2. Create your Feature Branch:
+ 
+### Create a new branch
+```bash
 git checkout -b feature/OptimizationFeature
-Commit your changes:
 
-Bash
-git commit -m "Add optimization feature"
-Push to the branch:
+Commit your changes
+Bashgit commit -m "Add optimization feature"
 
-Bash
-git push origin feature/OptimizationFeature
-Open a Pull Request.
+Push to the branch
+Bashgit push origin feature/OptimizationFeature
+
+Open a Pull Request
+Follow your repository's contribution guidelines to open a PR.
 
 📄 Citation & License
 If you use this repository or dataset in academic work, please cite:
-
-Code snippet
-@dataset{adeleke_nsl_2026,
+Bibtex@dataset{adeleke_nsl_2026,
   author       = {Adeleke, A. and Afolayan, A. H. and Johnson, O.},
   title        = {Nigerian Sign Language (NSL) Alphanumeric Dataset},
   month        = jan,
@@ -107,6 +106,17 @@ Code snippet
   publisher    = {Zenodo},
   version      = {v3},
   doi          = {10.5281/zenodo.21672976},
-  url          = {[https://doi.org/10.5281/zenodo.21672976](https://doi.org/10.5281/zenodo.21672976)}
+  url          = {https://doi.org/10.5281/zenodo.21672976}
 }
-Distributed under the MIT License. See LICENSE for more information.
+
+
+This formatting:
+- Uses **headings** for sections.
+- Wraps commands in **Bash code blocks**.
+- Formats the citation in a **BibTeX code block** for academic use.
+- Adds horizontal rules (`---`) for separation.
+
+---
+
+If you want, I can also make a **README.md** file from this so it’s ready to drop into a GitHub repo.  
+Do you want me to prepare that?
