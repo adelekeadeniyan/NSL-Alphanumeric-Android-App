@@ -40,3 +40,73 @@ An offline, real-time sign language translation framework for Android. This appl
 ```bash
 git clone [https://github.com/adelekeadeniyan/NSL-Alphanumeric-Android-App.git](https://github.com/adelekeadeniyan/NSL-Alphanumeric-Android-App.git)
 cd NSL-Alphanumeric-Android-App
+
+
+2. Open in Android Studio
+Launch Android Studio (Hedgehog | 2023.1.1 or newer recommended).
+
+Select Open and navigate to the cloned project root.
+
+Allow Gradle to sync and install missing platform tools automatically.
+
+3. Verify Model Assets
+Ensure the model files are located inside app/src/main/assets/:
+
+best_float32.tflite — Trained YOLO detection graph.
+
+lables.txt — Plain-text class index mapping.
+
+4. Build & Deploy
+Connect a physical Android device (API 24+) via USB Debugging and press Run (Shift + F10). Grant camera permissions when prompted.
+
+📂 Project Architecture
+
+app/src/main/java/com/example/signlanguagedetector/
+├── YoloDetector.kt    # Loads TFLite model, handles image scaling/normalization, and applies Non-Maximum Suppression (NMS).
+├── OverlayView.kt     # Custom UI view for rendering bounding boxes and class labels onto the camera canvas.
+└── MainActivity.kt    # Binds CameraX lifecycle, handles surface transforms, and updates the translation view.
+
+
+📝 Supported Alphanumeric Classes
+The model is trained on 33 distinct static manual sign classes:
+
+Numbers (9): 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+Alphabet Letters (24): a, b, c, d, e, f, g, h, i, k, l, m, n, o, p, q, r, s, t, u, v, w, y
+
+(Note: Dynamic gestures requiring movement such as j and z are excluded from static single-frame evaluation).
+
+🤝 Contributing
+Contributions, bug fixes, and dataset improvements are welcome!
+
+Fork the repository.
+
+Create your Feature Branch:
+
+Bash
+git checkout -b feature/OptimizationFeature
+Commit your changes:
+
+Bash
+git commit -m "Add optimization feature"
+Push to the branch:
+
+Bash
+git push origin feature/OptimizationFeature
+Open a Pull Request.
+
+📄 Citation & License
+If you use this repository or dataset in academic work, please cite:
+
+Code snippet
+@dataset{adeleke_nsl_2026,
+  author       = {Adeleke, A. and Afolayan, A. H. and Johnson, O.},
+  title        = {Nigerian Sign Language (NSL) Alphanumeric Dataset},
+  month        = jan,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {v3},
+  doi          = {10.5281/zenodo.21672976},
+  url          = {[https://doi.org/10.5281/zenodo.21672976](https://doi.org/10.5281/zenodo.21672976)}
+}
+Distributed under the MIT License. See LICENSE for more information.
