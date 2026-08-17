@@ -17,7 +17,7 @@ An offline, real-time sign language translation framework for Android. This appl
 ## 🚀 Tech Stack & System Requirements
 
 * **Language:** Kotlin
-* **Minimum SDK:** API Level 24 (Android 7.0 Nougat)
+* **Minimum SDK:** API Level 24 (Android 5.1 )
 * **Target SDK:** API Level 34+
 * **Machine Learning Runtime:** TensorFlow Lite (`org.tensorflow:tensorflow-lite-gpu`)
 * **Camera Architecture:** Android Jetpack CameraX API
