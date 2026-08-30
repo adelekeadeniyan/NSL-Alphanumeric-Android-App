@@ -108,15 +108,3 @@ Bibtex@dataset{adeleke_nsl_2026,
   doi          = {10.5281/zenodo.21672976},
   url          = {https://doi.org/10.5281/zenodo.21672976}
 }
-
-
-This formatting:
-- Uses **headings** for sections.
-- Wraps commands in **Bash code blocks**.
-- Formats the citation in a **BibTeX code block** for academic use.
-- Adds horizontal rules (`---`) for separation.
-
----
-
-If you want, I can also make a **README.md** file from this so it’s ready to drop into a GitHub repo.  
-Do you want me to prepare that?
