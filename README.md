@@ -1,6 +1,6 @@
 # NSL Alphanumeric Sign Language Detector (Android) 🤟📱
 
-An offline, real-time sign language translation framework for Android. This application leverages a quantized **YOLOv8** single-stage object detector running via **TensorFlow Lite (TFLite)** and **Android CameraX** to recognize and translate Nigerian Sign Language (NSL) hand gestures into alphanumeric characters with low latency.
+An offline, real-time sign language translation framework for Android. This application leverages a quantized **YOLOv11n** single-stage object detector running via **TensorFlow Lite (TFLite)** and **Android CameraX** to recognize and translate Nigerian Sign Language (NSL) hand gestures into alphanumeric characters with low latency.
 
 ---
 
@@ -96,15 +96,17 @@ Bashgit push origin feature/OptimizationFeature
 Open a Pull Request
 Follow your repository's contribution guidelines to open a PR.
 
-📄 Citation & License
-If you use this repository or dataset in academic work, please cite:
-Bibtex@dataset{adeleke_nsl_2026,
-  author       = {Adeleke, A. and Afolayan, A. H. and Johnson, O.},
+## Citation
+
+Please cite this dataset and work if utilized in academic or research contexts:
+
+```bibtex
+@dataset{adeleke2026nsl,
+  author       = {Adeleke Adeniyan and Abimbola H. Afolayan and Olanrewaju V. Johnson},
   title        = {Nigerian Sign Language (NSL) Alphanumeric Dataset},
-  month        = jan,
-  year         = 2026,
+  year         = {2026},
   publisher    = {Zenodo},
-  version      = {v3},
   doi          = {10.5281/zenodo.21672976},
   url          = {https://doi.org/10.5281/zenodo.21672976}
 }
+```
