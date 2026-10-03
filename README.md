@@ -37,10 +37,10 @@ An offline, real-time sign language translation framework for Android. This appl
 ## 🛠️ Setup & Installation
 
 ### 1. Clone the Repository
-```bash
+```bibtex
 git clone [https://github.com/adelekeadeniyan/NSL-Alphanumeric-Android-App.git](https://github.com/adelekeadeniyan/NSL-Alphanumeric-Android-App.git)
 cd NSL-Alphanumeric-Android-App
-
+```
 
 ### 2. Open in Android Studio
 1. Launch **Android Studio** (Hedgehog | 2023.1.1 or newer recommended).
@@ -64,6 +64,7 @@ app/src/main/java/com/example/signlanguagedetector/
 ├── YoloDetector.kt    # Loads TFLite model, handles image scaling/normalization, and applies Non-Maximum Suppression (NMS).
 ├── OverlayView.kt     # Custom UI view for rendering bounding boxes and class labels onto the camera canvas.
 └── MainActivity.kt    # Binds CameraX lifecycle, handles surface transforms, and updates the translation view.
+```
 
 ## 📝 Supported Alphanumeric Classes
 
@@ -84,16 +85,16 @@ Contributions, bug fixes, and dataset improvements are welcome!
 2. Create your Feature Branch:
  
 ### Create a new branch
-```bash
+
 git checkout -b feature/OptimizationFeature
 
-Commit your changes
-Bashgit commit -m "Add optimization feature"
+## Commit your changes
+git commit -m "Add optimization feature"
 
-Push to the branch
-Bashgit push origin feature/OptimizationFeature
+## Push to the branch
+git push origin feature/OptimizationFeature
 
-Open a Pull Request
+## Open a Pull Request
 Follow your repository's contribution guidelines to open a PR.
 
 ## Citation
